@@ -1,10 +1,11 @@
 package parser
 
 import (
-	"biblionify/lib/types"
-	"biblionify/lib/util"
 	"encoding/json"
 	"io/ioutil"
+
+	"github.com/leomfelicissimo/biblionify/lib/types"
+	"github.com/leomfelicissimo/biblionify/lib/util"
 )
 
 // ParseJSONFile gets a json file from a certain path parsing it

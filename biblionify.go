@@ -1,13 +1,14 @@
 package main
 
 import (
-	"biblionify/lib/parser"
 	"fmt"
+
+	"github.com/leomfelicissimo/biblionify/lib/parser"
 )
 
 func main() {
-	filePath := "./biblefiles/mini.json"
-	outputPath := "/Users/leonardo/go/src/biblionify/biblefiles/biblion.mini.json"
+	filePath := "./biblefiles/nvi.json"
+	outputPath := "/Users/leonardo/go/src/biblionify/biblefiles/biblion.nvi.json"
 	parser.TransformAndSave(filePath, outputPath)
 	fmt.Println("The file was transformed")
 }

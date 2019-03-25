@@ -27,3 +27,9 @@ type BiblionText struct {
 	Verse   int    `json:"verse"`
 	Text    string `json:"text"`
 }
+
+type Configuration struct {
+	Port             int
+	SourcePath       string
+	ElasticSearchURL string
+}

@@ -1,8 +1,9 @@
 package util
 
 import (
-	"biblionify/lib/types"
 	"fmt"
+
+	"github.com/leomfelicissimo/biblionify/lib/types"
 )
 
 // HandleError get a error object if it not is nil
