@@ -9,6 +9,7 @@ Some Bible versions available in JSON file format by other collaborators present
 ## Technology ##
 - Developed in GO
 - Using VIPER to load configs
+- Funcs to index data on ElasticSearch
 
 ## Author ##
 Leonardo Felicissimo
