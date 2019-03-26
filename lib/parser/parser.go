@@ -20,6 +20,17 @@ func parseJSONFile(sourcePath string) types.JSONBiblical {
 	return bibleTexts
 }
 
+func LoadBiblionTextsFromFile(sourcePath string) types.BiblionTexts {
+	jsonContent, err := ioutil.ReadFile(sourcePath)
+	util.HandleError(err, "Loading json file")
+
+	var biblionTexts types.BiblionTexts
+	errMarshal := json.Unmarshal(jsonContent, &biblionTexts)
+	util.HandleError(errMarshal, "Loading json and parsing it")
+
+	return biblionTexts
+}
+
 // TransformJSON Load a Biblical JSON file and transforms it to a Biblion JSON file
 func transformJSON(filePath string) []byte {
 	content := parseJSONFile(filePath)

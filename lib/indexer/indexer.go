@@ -80,7 +80,7 @@ func IndexBiblionData(elasticSearchURL string, biblionTexts []types.BiblionText)
 	index := getOrCreateIndex(client, "nvi")
 
 	for _, text := range biblionTexts {
-		id := strconv.Itoa(text.Chapter) + strconv.Itoa(text.Verse)
+		id := text.Book + strconv.Itoa(text.Chapter) + strconv.Itoa(text.Verse)
 		_, err := index.Index("nvi").
 			Type("bibleText").
 			Id(id).

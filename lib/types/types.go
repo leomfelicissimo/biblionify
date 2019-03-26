@@ -18,7 +18,7 @@ type JSONBiblicalText struct {
 }
 
 type BiblionTexts struct {
-	BiblionText []BiblionText `json:"bibleTexts"`
+	BiblionTexts []BiblionText `json:"bibleTexts"`
 }
 
 type BiblionText struct {
