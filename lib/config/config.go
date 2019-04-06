@@ -18,9 +18,6 @@ type Configuration struct {
 
 // LoadConfiguration returns a Configuration struct
 func LoadConfiguration() *Configuration {
-	// viper.AddConfigPath(".")
-	// viper.SetConfigName("config.yml")
-	// viper.SetConfigType("yaml")
 	viper.SetConfigFile("./config.yml")
 
 	viper.SetDefault("port", "3927")

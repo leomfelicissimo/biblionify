@@ -10,6 +10,8 @@ Some Bible versions available in JSON file format by other collaborators present
 - Developed in GO
 - Using VIPER to load configs
 - Funcs to index data on ElasticSearch
+- Funcs to index data on Firestore
+- Funcs to index data on MongoDB
 
 ## Author ##
 Leonardo Felicissimo
