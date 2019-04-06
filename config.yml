@@ -1,0 +1,5 @@
+port: 3927
+source_path: "./biblefiles/biblion.nvi.json"
+mongodb_url: "mongodb://localhost:27017"
+mongodb_database: "biblion"
+mongodb_collection: "nvi"

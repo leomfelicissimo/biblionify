@@ -18,7 +18,7 @@ type JSONBiblicalText struct {
 }
 
 type BiblionTexts struct {
-	BiblionTexts []BiblionText `json:"bibleTexts"`
+	BiblionTexts []BiblionText `json:"biblionTexts"`
 }
 
 type BiblionText struct {
@@ -26,10 +26,4 @@ type BiblionText struct {
 	Chapter int    `json:"chapter"`
 	Verse   int    `json:"verse"`
 	Text    string `json:"text"`
-}
-
-type Configuration struct {
-	Port             int
-	SourcePath       string
-	ElasticSearchURL string
 }

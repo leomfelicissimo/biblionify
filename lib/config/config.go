@@ -1,27 +1,42 @@
 package config
 
 import (
-	"github.com/leomfelicissimo/biblionify/lib/types"
 	"github.com/leomfelicissimo/biblionify/lib/util"
 
 	"github.com/spf13/viper"
 )
 
-// LoadConfiguration returns PORT and SOURCE_PATH from a config.yaml file
-func LoadConfiguration() *types.Configuration {
-	viper.AddConfigPath(".")
-	viper.SetConfigFile("config.yaml")
+// Configuration represents the data loaded from a config.yaml file
+type Configuration struct {
+	Port             int
+	SourcePath       string
+	ElasticSearchURL string
+	MongoURL         string
+	MongoDatabase    string
+	MongoCollection  string
+}
+
+// LoadConfiguration returns a Configuration struct
+func LoadConfiguration() *Configuration {
+	// viper.AddConfigPath(".")
+	// viper.SetConfigName("config.yml")
+	// viper.SetConfigType("yaml")
+	viper.SetConfigFile("./config.yml")
 
 	viper.SetDefault("port", "3927")
-	viper.SetDefault("source_path", "./biblefiles")
+	viper.SetDefault("source_path", "../../biblefiles")
 	viper.SetDefault("elastic_search_url", "http://localhost:9200")
+	viper.SetDefault("mongodb_url", "http://localhost:27017")
 
 	err := viper.ReadInConfig()
-	util.HandleError(err, "loading config")
+	util.HandleError(err, "Loading Configuration")
 
-	return &types.Configuration{
+	return &Configuration{
 		Port:             viper.GetInt("port"),
 		SourcePath:       viper.GetString("source_path"),
 		ElasticSearchURL: viper.GetString("elastic_search_url"),
+		MongoURL:         viper.GetString("mongodb_url"),
+		MongoDatabase:    viper.GetString("mongodb_database"),
+		MongoCollection:  viper.GetString("mongodb_collection"),
 	}
 }
